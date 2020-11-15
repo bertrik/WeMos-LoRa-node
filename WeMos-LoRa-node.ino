@@ -109,6 +109,9 @@ static int do_otaa(int argc, char *argv[])
         }
         return CMD_OK;
     }
+    if (argc < 4) {
+        return CMD_ARG;
+    }
 
     char *deveui = argv[1];
     char *appeui = argv[2];
