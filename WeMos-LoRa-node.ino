@@ -181,6 +181,9 @@ void setup(void)
     printf("\nWeMos-LoRa-node\n");
     EditInit(line, sizeof(line));
 
+    // switch
+    pinMode(PIN_SWITCH, INPUT_PULLUP);
+
     // LED init
     FastLED.addLeds < WS2812B, PIN_LED_RGB, RGB > (leds, 2).setCorrection(TypicalSMD5050);
 
