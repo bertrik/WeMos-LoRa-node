@@ -100,11 +100,11 @@ static int do_otaa(int argc, char *argv[])
         if (savedata.magic != SAVEDATA_MAGIC) {
             printf("No valid data!\n");
         } else {
-            printf("Dev EUI =");
+            printf("Dev EUI = ");
             printhex(savedata.deveui, 8);
-            printf("App EUI =");
+            printf("App EUI = ");
             printhex(savedata.appeui, 8);
-            printf("App key =");
+            printf("App key = ");
             printhex(savedata.appkey, 16);
         }
         return CMD_OK;
@@ -204,6 +204,7 @@ void setup(void)
         LMIC_startJoining();
     }
 #endif                          /* NO_HARDWARE_PRESENT */
+    FastLED.showColor(CRGB::Black);
 }
 
 void loop(void)
